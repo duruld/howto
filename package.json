@@ -1,0 +1,21 @@
+{
+  "name": "howto",
+  "version": "1.0.0",
+  "description": "How to do project",
+  "author": "Oğuzcan Köse",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "nuxt": "^1.0.0",
+    "@nuxtjs/axios": "^5.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1"
+  }
+}
