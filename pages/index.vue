@@ -20,7 +20,7 @@ export default {
     }
   },
   // head () {
-  //   let post = this.loadedPosts
+  ////   let post = this.loadedPosts
   //   return {
   //     title: post.title,
   //     meta: [
