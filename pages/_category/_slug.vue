@@ -1,7 +1,10 @@
 <template>
 <div>
-  <h1>slug {{ $route.params.id }}</h1>
-  {{ loadedPost.author }}
+  <!-- <h1>slug {{ loadedPost.id }}</h1> -->
+  <div v-for="post in loadedPost" :key="post.title"> 
+  {{ post.author }}
+  {{ post.title }}
+  </div>
   </div>
 </template>
 
@@ -10,13 +13,13 @@ import Vuex from "vuex"
 import axios from "axios"
 
 export default {
-  // data() {
-  //   return {
-  //     loadedPost: []
-  //   }
-  // },
-  asyncData(context) {
-    return axios.get('https://howto-a9089.firebaseio.com/posts/' + context.params.id + '.json')
+  data() {
+    return {
+      loadedPost: []
+    }
+  },
+  async asyncData({params}) {
+    return axios.get('https://howto-a9089.firebaseio.com/posts.json?orderBy="slug"&equalTo=' + '"' + params.slug + '"' + '&print=pretty')
       .then(res => {
         return {
           loadedPost: res.data
@@ -24,10 +27,6 @@ export default {
       })
       // .catch(e => context.error(e))
   },
-  // computed: {
-  //   post() {
-  //       return this.$store.state.post
-  //   },  
     // head() {
     //   return {
     //     title: loadedPost.title,

@@ -5,7 +5,6 @@ const createStore = () => {
     return new Vuex.Store({
         state: {
             loadedPosts: [],
-            post: []
         },
         mutations: {
             setPosts(state, posts) {
