@@ -47,9 +47,9 @@ export default {
       }
   },
   methods: {
-        onSave(editedPost) {
+        onSave(vuexContext, editedPost) {
             console.log(this.editedPost)
-            axios.post('https://howto-a9089.firebaseio.com/posts.json', this.editedPost)
+            axios.post('https://howto-a9089.firebaseio.com/posts.json?auth=' + this.$store.state.token, this.editedPost)
                  .then(result => console.log(result))
                  .catch(e => console.log(e))
         },

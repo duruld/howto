@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const cfg = require('./config')
 
 module.exports = {
   mode: 'universal',
@@ -22,7 +23,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#FFFFFF' },
+  loading: { color: '#000' },
 
   /*
   ** Global CSS
@@ -50,6 +51,10 @@ module.exports = {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
+  env: {
+    fbAPI: cfg.apiKey
+  },
+
   /*
   ** Build configuration
   */
@@ -58,7 +63,6 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
     }
   }
 }
