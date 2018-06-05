@@ -51,9 +51,9 @@ module.exports = {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
-  env: {
-    fbAPI: cfg.apiKey
-  },
+  // env: {
+  //   fbAPI: cfg.apiKey
+  // },
 
   /*
   ** Build configuration
