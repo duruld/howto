@@ -1,5 +1,5 @@
 const pkg = require('./package')
-const cfg = require('./config')
+// const cfg = require('./config')
 
 module.exports = {
   mode: 'universal',
@@ -52,7 +52,7 @@ module.exports = {
   },
 
   env: {
-    fbAPI: cfg.apiKey
+    fbAPI: apiKey
   },
 
   /*
