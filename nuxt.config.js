@@ -52,7 +52,7 @@ module.exports = {
   },
 
   env: {
-    fbAPI: apiKey
+    // fbAPI: apiKey
   },
 
   /*
