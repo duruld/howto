@@ -9,6 +9,7 @@ export default {
   components: {
       AdminPostForm
   },
+  middleware: ['check-auth', 'auth'],
   data() {
       return {
         //   loadedPosts: {

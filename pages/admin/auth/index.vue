@@ -28,7 +28,9 @@ export default {
                 password: this.password
             })
             .then(() => {
-                this.$router.push('/admin/new')
+                // if(this.$store.state.token != null) {
+                    // this.$router.push('/admin/new')
+                // }
             })
         }
     }

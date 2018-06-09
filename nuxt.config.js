@@ -1,5 +1,4 @@
 const pkg = require('./package')
-// const cfg = require('./config')
 
 module.exports = {
   mode: 'universal',
@@ -50,10 +49,6 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-
-  // env: {
-  //   fbAPI: cfg.apiKey
-  // },
 
   /*
   ** Build configuration

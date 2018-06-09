@@ -16,8 +16,11 @@
     "npm": "5.6.0"
   },
   "dependencies": {
-    "nuxt": "^1.0.0",
-    "@nuxtjs/axios": "^5.0.0"
+    "@nuxtjs/axios": "^5.0.0",
+    "ajv": "^6.5.0",
+    "ajv-keywords": "^3.2.0",
+    "js-cookie": "^2.2.0",
+    "nuxt": "^1.0.0"
   },
   "devDependencies": {
     "cross-env": "^5.0.1"
