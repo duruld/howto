@@ -18,13 +18,15 @@ export default {
       loadedPost: {}
     }
   },
-  async asyncData({app, params}) {
-    const obj = await app.$axios.$get('https://howto-a9089.firebaseio.com/posts.json?orderBy="slug"&equalTo=' + '"' + params.slug + '"' + '&print=pretty');
-    const id = Object.keys(obj)[0];
-    const loadedPost = obj[id];
-    return {
-      loadedPost
-    };
+  async asyncData({params}) {
+    return axios.get('https://howto-a9089.firebaseio.com/posts.json?orderBy="slug"&equalTo=' + '"' + params.slug + '"' + '&print=pretty').then((result) => {
+      const obj = result.data;
+      const id = Object.keys(obj)[0];
+      const loadedPost = obj[id];
+      return {
+        loadedPost
+      };
+    })
   },
     head() {
       return {
