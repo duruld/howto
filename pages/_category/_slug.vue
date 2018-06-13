@@ -22,7 +22,6 @@ export default {
     const obj = await app.$axios.$get('https://howto-a9089.firebaseio.com/posts.json?orderBy="slug"&equalTo=' + '"' + params.slug + '"' + '&print=pretty');
     const id = Object.keys(obj)[0];
     const loadedPost = obj[id];
-    console.log(loadedPost);
     return {
       loadedPost
     };
