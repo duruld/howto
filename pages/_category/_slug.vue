@@ -1,9 +1,9 @@
 <template>
 <div>
   <!-- <h1>slug {{ loadedPost.id }}</h1> -->
-  <div v-for="post in loadedPost" :key="post.title"> 
-  {{ post.author }}
-  {{ post.title }}
+  <div key="loadedPost.title"> 
+  {{ loadedPost.author }}
+  {{ loadedPost.title }}
   </div>
   </div>
 </template>
@@ -15,14 +15,18 @@ import axios from "axios"
 export default {
   data() {
     return {
-      loadedPost: []
+      isLoading: false,
+      loadedPost: {}
     }
   },
   async asyncData({params}) {
     return axios.get('https://howto-a9089.firebaseio.com/posts.json?orderBy="slug"&equalTo=' + '"' + params.slug + '"' + '&print=pretty')
       .then(res => {
+        const obj = res.data;
+        const id = Object.keys(obj)[0];
+        const loadedPost = obj[id];
         return {
-          loadedPost: res.data
+          loadedPost
         }
       })
       // .catch(e => context.error(e))
